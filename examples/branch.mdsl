@@ -1,0 +1,10 @@
+root {
+    branch [AttemptDance]
+}
+
+root [AttemptDance] {
+    sequence {
+        condition [CanDance]
+        action [Dance]
+    }
+}

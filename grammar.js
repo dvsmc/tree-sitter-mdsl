@@ -1,85 +1,67 @@
 module.exports = grammar({
-  name: 'mdsl',
+    name: "mdsl",
 
-  rules: {
-    // The top-level rule, which describes a program or script
-    source_file: $ => repeat($.block),
+    rules: {
+        source_file: ($) => repeat($._definition),
 
-    // Resolve conflicts between "sequence" and "lotto"
-    _block_statement: $ => choice(
-      $.block,            // Nested blocks
-      $.sequence_block,   // Sequence block
-      $.lotto_block,      // Lotto block
-      $.condition,        // Condition statement
-      $.action,           // Action statement
-      $.expression        // Simple expressions like strings/numbers
-    ),
+        _definition: ($) => choice($.root_node, $.comment),
 
-    // Blocks can be things like 'root', 'selector', etc.
-    block: $ => seq(
-      $.keyword,
-      '{',
-      repeat($._block_statement),
-      '}'
-    ),
+        root_node: ($) => seq("root", optional($.identifier), $.block),
 
-    // Keywords like 'root', 'selector', etc.
-    keyword: $ => choice(
-      'root', 'selector', 'action', 'condition', 'lotto', 'while'
-    ),
+        block: ($) => seq("{", repeat($._node), "}"),
 
-    // The "sequence" block needs to be treated separately to avoid conflicts
-    sequence_block: $ => seq(
-      'sequence',
-      '{',
-      repeat($._block_statement),
-      '}'
-    ),
+        _node: ($) => choice($.composite_node, $.decorator_node, $.leaf_node, $.comment),
 
-    // The "lotto" block also needs separate handling
-    lotto_block: $ => seq(
-      'lotto',
-      '{',
-      repeat($.action),
-      '}'
-    ),
+        composite_node: ($) =>
+            seq(
+                choice("sequence", "selector", "parallel", "race", "all", "lotto"),
+                optional($.node_args),
+                optional($.callbacks),
+                optional($.guards),
+                $.block,
+            ),
 
-    // Sequences contain multiple conditions and actions
-    sequence: $ => prec(1, $.sequence_block),
+        decorator_node: ($) =>
+            seq(
+                choice("repeat", "retry", "flip", "succeed", "fail"),
+                optional($.node_args),
+                optional($.callbacks),
+                optional($.guards),
+                choice($.block, $._node),
+            ),
 
-    // Conditions in square brackets with optional parameters
-    condition: $ => seq(
-      'condition',
-      '[',
-      field('name', $.identifier),
-      optional(seq(',', field('parameter', $.string))),
-      ']'
-    ),
+        leaf_node: ($) =>
+            seq(
+                choice("action", "condition", "wait", "branch"),
+                optional($.node_args),
+                optional($.callbacks),
+                optional($.guards),
+            ),
 
-    // Actions with optional parameters
-    action: $ => seq(
-      'action',
-      '[',
-      field('name', $.identifier),
-      optional(seq(',', field('parameter', $.string))),
-      ']'
-    ),
+        node_args: ($) => seq("[", sepBy(",", $._value), "]"),
 
-    // Identifiers (functions/entities)
-    identifier: $ => /[a-zA-Z_][a-zA-Z0-9_]*/,
+        _value: ($) => choice($.number, $.string, $.boolean, "null", $.identifier),
 
-    // Strings (double-quoted)
-    string: $ => /"(\\.|[^"\\])*"/,
+        callbacks: ($) =>
+            repeat1(
+                seq(choice("entry", "exit", "step"), "(", $.identifier, optional(seq(",", sepBy(",", $._value))), ")"),
+            ),
 
-    // Basic expressions like numeric values
-    expression: $ => choice(
-      $.string,
-      /\d+/
-    )
-  },
+        guards: ($) =>
+            choice(
+                seq("while", "(", $.identifier, optional(seq(",", sepBy(",", $._value))), ")"),
+                seq("until", "(", $.identifier, optional(seq(",", sepBy(",", $._value))), ")"),
+            ),
 
-  // Only leave necessary conflicts (remove conflict with sequence_block)
-  conflicts: $ => [
-    [$.keyword, $.lotto_block]
-  ]
+        comment: ($) => token(seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/")),
+
+        identifier: ($) => /[a-zA-Z_][a-zA-Z0-9_]*/,
+        number: ($) => /\d+(\.\d+)?/,
+        string: ($) => /"[^"]*"/,
+        boolean: ($) => choice("true", "false"),
+    },
 });
+
+function sepBy(separator, rule) {
+    return optional(seq(rule, repeat(seq(separator, rule))));
+}

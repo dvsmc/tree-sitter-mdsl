@@ -555,7 +555,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-gyp@npm:latest":
+"node-gyp-build@npm:^4.8.2":
+  version: 4.8.2
+  resolution: "node-gyp-build@npm:4.8.2"
+  bin:
+    node-gyp-build: bin.js
+    node-gyp-build-optional: optional.js
+    node-gyp-build-test: build-test.js
+  checksum: 1a57bba8c4c193f808bd8ad1484d4ebdd8106dd9f04a3e82554dc716e3a2d87d7e369e9503c145e0e6a7e2c663fec0d8aaf52bd8156342ec7fc388195f37824e
+  languageName: node
+  linkType: hard
+
+"node-gyp@npm:^10.2.0, node-gyp@npm:latest":
   version: 10.2.0
   resolution: "node-gyp@npm:10.2.0"
   dependencies:
@@ -794,6 +805,8 @@ __metadata:
   resolution: "tree-sitter-mdsl@workspace:."
   dependencies:
     nan: ^2.20.0
+    node-gyp: ^10.2.0
+    node-gyp-build: ^4.8.2
     tree-sitter-cli: ^0.24.2
   languageName: unknown
   linkType: soft
