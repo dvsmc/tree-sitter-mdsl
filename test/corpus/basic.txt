@@ -1,0 +1,28 @@
+==================
+Basic MDSL Example
+==================
+
+root {
+  sequence {
+    action [Walk]
+    condition [HasWeapon]
+    action [Attack]
+  }
+}
+
+---
+
+(source_file
+  (root_node
+    (block
+      (composite_node
+        (block
+          (leaf_node
+            (node_args
+              (identifier)))
+          (leaf_node
+            (node_args
+              (identifier)))
+          (leaf_node
+            (node_args
+              (identifier))))))))

@@ -1,0 +1,28 @@
+{
+    "name": "tree-sitter-mdsl",
+    "version": "0.1.0",
+    "description": "Tree-sitter grammar for MDSL",
+    "main": "index.js",
+    "tree-sitter": {
+        "scope": "source.mdsl",
+        "injection-regex": "mdsl",
+        "file-types": [
+            "mdsl"
+        ]
+    },
+    "scripts": {
+        "generate": "tree-sitter generate",
+        "build": "node-gyp clean && tree-sitter generate && node-gyp rebuild",
+        "build-wasm": "tree-sitter build-wasm",
+        "test": "tree-sitter test"
+    },
+    "dependencies": {
+        "nan": "^2.20.0"
+    },
+    "devDependencies": {
+        "node-gyp": "^10.2.0",
+        "node-gyp-build": "^4.8.2",
+        "tree-sitter-cli": "^0.24.2"
+    },
+    "packageManager": "yarn@3.8.1+sha256.860bab3ca20acc0476b3229f4841674e62e15453bd8f5dc8d0fea399edd235b6"
+}

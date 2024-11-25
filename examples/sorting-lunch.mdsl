@@ -1,0 +1,26 @@
+root {
+    selector while(IsHungry) {
+        sequence {
+            condition [HasDollars, 15]
+            action [OrderFood, "Pizza"]
+        }
+        sequence {
+            condition [HasIngredient, "Steak"]
+            condition [HasIngredient, "Lobster"]
+            action [CookFood, "Surf 'n' Turf"]
+        }
+        sequence {
+            condition [HasIngredient, "Egg"]
+            lotto {
+                action [CookFood, "Omelette"]
+                action [CookFood, "Scrambled Eggs"]
+                action [CookFood, "Fried Eggs"]
+            }
+        }
+        sequence {
+            condition [HasIngredient, "Oats"]
+            action [CookFood, "Gruel"]
+        }
+        action [Starve]
+    }
+}

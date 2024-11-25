@@ -1,0 +1,10 @@
+.yarn
+node_modules
+.DS_Store
+.pnp.*
+
+target/
+grammars/
+test.ncl
+**.wasm
+build/*
