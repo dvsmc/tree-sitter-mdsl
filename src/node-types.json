@@ -8,7 +8,7 @@
       "required": false,
       "types": [
         {
-          "type": "boolean",
+          "type": "arg_list",
           "named": true
         },
         {
@@ -20,19 +20,7 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
           "type": "step",
-          "named": true
-        },
-        {
-          "type": "string",
           "named": true
         },
         {
@@ -96,6 +84,33 @@
         },
         {
           "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "arg_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
           "named": true
         }
       ]
@@ -213,7 +228,7 @@
       "required": false,
       "types": [
         {
-          "type": "boolean",
+          "type": "arg_list",
           "named": true
         },
         {
@@ -225,19 +240,7 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
           "type": "step",
-          "named": true
-        },
-        {
-          "type": "string",
           "named": true
         },
         {
@@ -537,19 +540,7 @@
       "required": false,
       "types": [
         {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
+          "type": "arg_list",
           "named": true
         }
       ]
