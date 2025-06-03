@@ -142,30 +142,30 @@ module.exports = grammar({
             choice(
                 alias(
                     seq("action", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),
-                    $.action
+                    "action"
                 ),
                 alias(
                     seq("condition", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),
-                    $.condition
+                    "condition"
                 ),
                 // wait [number, number]
                 alias(
                     seq("wait", "[", $.number, ",", $.number, "]", optional($.callbacks), optional($.guards)),
-                    $.wait
+                    "wait"
                 ),
                 // wait [number]
                 alias(
                     seq("wait", "[", $.number, "]", optional($.callbacks), optional($.guards)),
-                    $.wait
+                    "wait"
                 ),
                 // wait (no args)
                 alias(
                     seq("wait", optional($.callbacks), optional($.guards)),
-                    $.wait
+                    "wait"
                 ),
                 alias(
                     seq("branch", "[", $.identifier, "]", optional($.callbacks), optional($.guards)),
-                    $.branch
+                    "branch"
                 ),
             ),
 
@@ -177,19 +177,78 @@ module.exports = grammar({
 
         callbacks: ($) =>
             repeat1(
-                seq(choice("entry", "exit", "step"), "(", $.identifier, optional(seq(",", sepBy(",", $._value))), ")"),
+                choice(
+                    alias(
+                        seq(
+                            "entry",
+                            "(",
+                            $.identifier,
+                            optional(seq(
+                                ",",
+                                sepBy(",", $._value)
+                            )),
+                            ")"
+                        ),
+                        "entry"
+                    ),
+                    alias(
+                        seq(
+                            "exit",
+                            "(",
+                            $.identifier,
+                            optional(seq(
+                                ",",
+                                sepBy(",", $._value)
+                            )),
+                            ")"
+                        ),
+                        "exit"
+                    ),
+                    alias(
+                        seq(
+                            "step",
+                            "(",
+                            $.identifier,
+                            optional(seq(
+                                ",",
+                                sepBy(",", $._value)
+                            )),
+                            ")"
+                        ),
+                        "step"
+                    )
+                )
             ),
-
         guards: ($) =>
             choice(
-                seq(
-                    "while", "(", $.identifier, optional(seq(",", sepBy(",", $._value))), ")",
-                    optional(seq("then", choice("succeed", "fail")))
+                alias(
+                    seq(
+                        "while",
+                        "(",
+                        $.identifier,
+                        optional(seq(
+                            ",",
+                            sepBy(",", $._value)
+                        )),
+                        ")",
+                        optional(seq("then", choice("succeed", "fail")))
+                    ),
+                    "while"
                 ),
-                seq(
-                    "until", "(", $.identifier, optional(seq(",", sepBy(",", $._value))), ")",
-                    optional(seq("then", choice("succeed", "fail")))
-                ),
+                alias(
+                    seq(
+                        "until",
+                        "(",
+                        $.identifier,
+                        optional(seq(
+                            ",",
+                            sepBy(",", $._value)
+                        )),
+                        ")",
+                        optional(seq("then", choice("succeed", "fail")))
+                    ),
+                    "until"
+                )
             ),
 
         comment: $ => choice(
@@ -202,17 +261,7 @@ module.exports = grammar({
         string: ($) => /"[^"]*"/,
         boolean: ($) => choice("true", "false"),
 
-        // Add empty rules to make these node types named
-        sequence: _ => prec(1, seq()),
-        selector: _ => prec(1, seq()),
-        parallel: _ => prec(1, seq()),
-        race: _ => prec(1, seq()),
-        all: _ => prec(1, seq()),
-        repeat: _ => prec(1, seq()),
-        retry: _ => prec(1, seq()),
-        flip: _ => prec(1, seq()),
-        succeed: _ => prec(1, seq()),
-        fail: _ => prec(1, seq()),
+        // Remove now-unnecessary empty rules for callback and guard node types
     },
 });
 

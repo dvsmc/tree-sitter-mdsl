@@ -1,7 +1,7 @@
 [
   {
     "type": "action",
-    "named": true,
+    "named": false,
     "fields": {},
     "children": {
       "multiple": true,
@@ -39,10 +39,6 @@
           "named": true
         },
         {
-          "type": "boolean",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -55,23 +51,11 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
           "named": true
         }
       ]
@@ -142,57 +126,13 @@
   },
   {
     "type": "branch",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        }
-      ]
-    }
+    "named": false,
+    "fields": {}
   },
   {
     "type": "callbacks",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "comment",
@@ -232,7 +172,7 @@
   },
   {
     "type": "condition",
-    "named": true,
+    "named": false,
     "fields": {},
     "children": {
       "multiple": true,
@@ -289,6 +229,60 @@
     }
   },
   {
+    "type": "entry",
+    "named": false,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exit",
+    "named": false,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "fail",
     "named": true,
     "fields": {},
@@ -298,10 +292,6 @@
       "types": [
         {
           "type": "arg_list",
-          "named": true
-        },
-        {
-          "type": "boolean",
           "named": true
         },
         {
@@ -317,23 +307,11 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
           "named": true
         }
       ]
@@ -352,10 +330,6 @@
           "named": true
         },
         {
-          "type": "boolean",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -368,23 +342,11 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
           "named": true
         }
       ]
@@ -393,56 +355,12 @@
   {
     "type": "guards",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "leaf",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "action",
-          "named": true
-        },
-        {
-          "type": "branch",
-          "named": true
-        },
-        {
-          "type": "condition",
-          "named": true
-        },
-        {
-          "type": "wait",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "lotto",
@@ -484,10 +402,6 @@
           "named": true
         },
         {
-          "type": "boolean",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -500,23 +414,11 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
           "named": true
         }
       ]
@@ -535,10 +437,6 @@
           "named": true
         },
         {
-          "type": "boolean",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -551,23 +449,11 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
           "named": true
         }
       ]
@@ -586,10 +472,6 @@
           "named": true
         },
         {
-          "type": "boolean",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -602,23 +484,11 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
           "named": true
         }
       ]
@@ -637,10 +507,6 @@
           "named": true
         },
         {
-          "type": "boolean",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -653,23 +519,11 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
           "named": true
         }
       ]
@@ -707,10 +561,6 @@
           "named": true
         },
         {
-          "type": "boolean",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -723,23 +573,11 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
           "named": true
         }
       ]
@@ -758,10 +596,6 @@
           "named": true
         },
         {
-          "type": "boolean",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -774,23 +608,11 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
           "named": true
         }
       ]
@@ -817,6 +639,33 @@
     }
   },
   {
+    "type": "step",
+    "named": false,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "succeed",
     "named": true,
     "fields": {},
@@ -826,10 +675,6 @@
       "types": [
         {
           "type": "arg_list",
-          "named": true
-        },
-        {
-          "type": "boolean",
           "named": true
         },
         {
@@ -845,31 +690,19 @@
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
           "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
-          "named": true
         }
       ]
     }
   },
   {
-    "type": "wait",
-    "named": true,
+    "type": "until",
+    "named": false,
     "fields": {},
     "children": {
       "multiple": true,
@@ -895,12 +728,36 @@
     }
   },
   {
-    "type": "(",
-    "named": false
+    "type": "wait",
+    "named": false,
+    "fields": {}
   },
   {
-    "type": ")",
-    "named": false
+    "type": "while",
+    "named": false,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": ",",
@@ -915,15 +772,23 @@
     "named": false
   },
   {
+    "type": "action",
+    "named": false
+  },
+  {
+    "type": "branch",
+    "named": false
+  },
+  {
+    "type": "condition",
+    "named": false
+  },
+  {
     "type": "entry",
     "named": false
   },
   {
     "type": "exit",
-    "named": false
-  },
-  {
-    "type": "fail",
     "named": false
   },
   {
@@ -959,19 +824,15 @@
     "named": true
   },
   {
-    "type": "succeed",
-    "named": false
-  },
-  {
-    "type": "then",
-    "named": false
-  },
-  {
     "type": "true",
     "named": false
   },
   {
     "type": "until",
+    "named": false
+  },
+  {
+    "type": "wait",
     "named": false
   },
   {
