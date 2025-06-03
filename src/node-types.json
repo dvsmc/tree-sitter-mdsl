@@ -1,5 +1,32 @@
 [
   {
+    "type": "arg_list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "block",
     "named": true,
     "fields": {},
@@ -21,6 +48,10 @@
         },
         {
           "type": "leaf_node",
+          "named": true
+        },
+        {
+          "type": "lotto_node",
           "named": true
         }
       ]
@@ -122,6 +153,10 @@
           "named": true
         },
         {
+          "type": "lotto_node",
+          "named": true
+        },
+        {
           "type": "node_args",
           "named": true
         }
@@ -161,8 +196,12 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "arg_list",
+          "named": true
+        },
         {
           "type": "callbacks",
           "named": true
@@ -172,7 +211,38 @@
           "named": true
         },
         {
-          "type": "node_args",
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lotto_node",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "callbacks",
+          "named": true
+        },
+        {
+          "type": "guards",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         }
       ]
@@ -183,23 +253,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
-      "required": false,
+      "multiple": false,
+      "required": true,
       "types": [
         {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
+          "type": "arg_list",
           "named": true
         }
       ]

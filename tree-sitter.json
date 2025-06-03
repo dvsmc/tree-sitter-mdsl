@@ -1,0 +1,40 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "mdsl",
+      "camelcase": "Mdsl",
+      "title": "Mdsl",
+      "scope": "source.mdsl",
+      "file-types": [
+        "mdsl"
+      ],
+      "injection-regex": "^mdsl$",
+      "class-name": "TreeSitterMdsl"
+    }
+  ],
+  "metadata": {
+    "version": "0.2.0",
+    "license": "MIT",
+    "description": "Parser for .mdsl files",
+    "authors": [
+      {
+        "name": "dvsmc",
+        "email": "dvsmc@pm.me",
+        "url": "https://github.com/dvsmc"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/dvsmc/tree-sitter-mdsl.git"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}

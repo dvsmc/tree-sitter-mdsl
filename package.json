@@ -1,6 +1,6 @@
 {
     "name": "tree-sitter-mdsl",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Tree-sitter grammar for MDSL",
     "main": "index.js",
     "tree-sitter": {
@@ -20,9 +20,9 @@
         "nan": "^2.20.0"
     },
     "devDependencies": {
-        "node-gyp": "^10.2.0",
+        "node-gyp": "^11.2.0",
         "node-gyp-build": "^4.8.2",
-        "tree-sitter-cli": "^0.24.2"
+        "tree-sitter-cli": "^0.25.5"
     },
     "packageManager": "yarn@3.8.1+sha256.860bab3ca20acc0476b3229f4841674e62e15453bd8f5dc8d0fea399edd235b6"
 }

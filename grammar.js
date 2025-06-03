@@ -10,15 +10,33 @@ module.exports = grammar({
 
         block: ($) => seq("{", repeat($._node), "}"),
 
-        _node: ($) => choice($.composite_node, $.decorator_node, $.leaf_node, $.comment),
+        _node: ($) => choice($.composite_node, $.lotto_node, $.decorator_node, $.leaf_node, $.comment),
 
         composite_node: ($) =>
             seq(
-                choice("sequence", "selector", "parallel", "race", "all", "lotto"),
+                choice("sequence", "selector", "parallel", "race", "all"),
                 optional($.node_args),
                 optional($.callbacks),
                 optional($.guards),
                 $.block,
+            ),
+
+        // Specialized lotto_node for lotto with optional number arguments
+        lotto_node: ($) =>
+            choice(
+                seq(
+                    "lotto",
+                    "[", $.number, repeat(seq(",", $.number)), "]",
+                    optional($.callbacks),
+                    optional($.guards),
+                    $.block,
+                ),
+                seq(
+                    "lotto",
+                    optional($.callbacks),
+                    optional($.guards),
+                    $.block,
+                )
             ),
 
         decorator_node: ($) =>
@@ -30,15 +48,18 @@ module.exports = grammar({
                 choice($.block, $._node),
             ),
 
+        // Stricter leaf_node for action, condition, wait, branch (now allows multiple args for action/condition)
         leaf_node: ($) =>
-            seq(
-                choice("action", "condition", "wait", "branch"),
-                optional($.node_args),
-                optional($.callbacks),
-                optional($.guards),
+            choice(
+                seq("action", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),
+                seq("condition", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),
+                seq("wait", "[", $.number, ",", $.number, "]", optional($.callbacks), optional($.guards)),
+                seq("branch", "[", $.identifier, "]", optional($.callbacks), optional($.guards)),
             ),
 
-        node_args: ($) => seq("[", sepBy(",", $._value), "]"),
+        // node_args requires at least one value
+        node_args: ($) => seq("[", $.arg_list, "]"),
+        arg_list: ($) => seq($._value, repeat(seq(",", $._value))),
 
         _value: ($) => choice($.number, $.string, $.boolean, "null", $.identifier),
 
