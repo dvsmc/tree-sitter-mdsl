@@ -223,23 +223,23 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   },
   [anon_sym_sequence] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_selector] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_parallel] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_race] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_all] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_lotto] = {
     .visible = true,
@@ -4421,7 +4421,7 @@ TS_PUBLIC const TSLanguage *tree_sitter_mdsl(void) {
     .metadata = {
       .major_version = 0,
       .minor_version = 5,
-      .patch_version = 4,
+      .patch_version = 6,
     },
   };
   return &language;

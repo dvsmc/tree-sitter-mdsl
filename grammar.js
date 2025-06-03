@@ -22,7 +22,7 @@ module.exports = grammar({
                         optional($.guards),
                         $.block,
                     ),
-                    "sequence"
+                    $.sequence
                 ),
                 alias(
                     seq(
@@ -32,7 +32,7 @@ module.exports = grammar({
                         optional($.guards),
                         $.block,
                     ),
-                    "selector"
+                    $.selector
                 ),
                 alias(
                     seq(
@@ -42,7 +42,7 @@ module.exports = grammar({
                         optional($.guards),
                         $.block,
                     ),
-                    "parallel"
+                    $.parallel
                 ),
                 alias(
                     seq(
@@ -52,7 +52,7 @@ module.exports = grammar({
                         optional($.guards),
                         $.block,
                     ),
-                    "race"
+                    $.race
                 ),
                 alias(
                     seq(
@@ -62,7 +62,7 @@ module.exports = grammar({
                         optional($.guards),
                         $.block,
                     ),
-                    "all"
+                    $.all
                 )
             ),
 
@@ -138,6 +138,13 @@ module.exports = grammar({
         number: ($) => /\d+(\.\d+)?/,
         string: ($) => /"[^"]*"/,
         boolean: ($) => choice("true", "false"),
+
+        // Add empty rules to make these node types named
+        sequence: _ => prec(1, seq()),
+        selector: _ => prec(1, seq()),
+        parallel: _ => prec(1, seq()),
+        race: _ => prec(1, seq()),
+        all: _ => prec(1, seq()),
     },
 });
 

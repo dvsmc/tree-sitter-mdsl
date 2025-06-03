@@ -146,7 +146,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "sequence"
         },
         {
@@ -200,7 +200,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "selector"
         },
         {
@@ -254,7 +254,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "parallel"
         },
         {
@@ -308,7 +308,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "race"
         },
         {
@@ -362,7 +362,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "all"
         }
       ]
@@ -1237,6 +1237,46 @@
           "value": "false"
         }
       ]
+    },
+    "sequence": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": []
+      }
+    },
+    "selector": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": []
+      }
+    },
+    "parallel": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": []
+      }
+    },
+    "race": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": []
+      }
+    },
+    "all": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": []
+      }
     }
   },
   "extras": [
