@@ -13,16 +13,16 @@ root {
 ---
 
 (source_file
-  (root_node
+  (root
     (block
-      (composite_node
+      (composite
         (block
-          (leaf_node
+          (leaf
             (node_args
               (identifier)))
-          (leaf_node
+          (leaf
             (node_args
               (identifier)))
-          (leaf_node
+          (leaf
             (node_args
               (identifier))))))))

@@ -4,15 +4,15 @@ module.exports = grammar({
     rules: {
         source_file: ($) => repeat($._definition),
 
-        _definition: ($) => choice($.root_node, $.comment),
+        _definition: ($) => choice($.root, $.comment),
 
-        root_node: ($) => seq("root", optional($.identifier), $.block),
+        root: ($) => seq("root", optional($.identifier), $.block),
 
-        block: ($) => seq("{", repeat($._node), "}"),
+        block: ($) => seq("{", repeat($._element), "}"),
 
-        _node: ($) => choice($.composite_node, $.lotto_node, $.decorator_node, $.leaf_node, $.comment),
+        _element: ($) => choice($.composite, $.lotto, $.decorator, $.leaf, $.comment),
 
-        composite_node: ($) =>
+        composite: ($) =>
             seq(
                 choice("sequence", "selector", "parallel", "race", "all"),
                 optional($.node_args),
@@ -21,8 +21,8 @@ module.exports = grammar({
                 $.block,
             ),
 
-        // Specialized lotto_node for lotto with optional number arguments
-        lotto_node: ($) =>
+        // Specialized lotto for lotto with optional number arguments
+        lotto: ($) =>
             choice(
                 seq(
                     "lotto",
@@ -39,17 +39,16 @@ module.exports = grammar({
                 )
             ),
 
-        decorator_node: ($) =>
+        decorator: ($) =>
             seq(
                 choice("repeat", "retry", "flip", "succeed", "fail"),
                 optional($.node_args),
                 optional($.callbacks),
                 optional($.guards),
-                choice($.block, $._node),
+                choice($.block, $._element),
             ),
 
-        // Stricter leaf_node for action, condition, wait, branch (now allows multiple args for action/condition)
-        leaf_node: ($) =>
+        leaf: ($) =>
             choice(
                 seq("action", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),
                 seq("condition", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),

@@ -12,7 +12,7 @@
 //!     .set_language(&language.into())
 //!     .expect("Error loading Mdsl parser");
 //! let tree = parser.parse(code, None).unwrap();
-//! assert!(!tree.root_node().has_error());
+//! assert!(!tree.node().has_error());
 //! ```
 //!
 //! [`Parser`]: https://docs.rs/tree-sitter/0.25.5/tree_sitter/struct.Parser.html

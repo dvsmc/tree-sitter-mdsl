@@ -14,7 +14,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "root_node"
+          "name": "root"
         },
         {
           "type": "SYMBOL",
@@ -22,7 +22,7 @@
         }
       ]
     },
-    "root_node": {
+    "root": {
       "type": "SEQ",
       "members": [
         {
@@ -58,7 +58,7 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "_node"
+            "name": "_element"
           }
         },
         {
@@ -67,24 +67,24 @@
         }
       ]
     },
-    "_node": {
+    "_element": {
       "type": "CHOICE",
       "members": [
         {
           "type": "SYMBOL",
-          "name": "composite_node"
+          "name": "composite"
         },
         {
           "type": "SYMBOL",
-          "name": "lotto_node"
+          "name": "lotto"
         },
         {
           "type": "SYMBOL",
-          "name": "decorator_node"
+          "name": "decorator"
         },
         {
           "type": "SYMBOL",
-          "name": "leaf_node"
+          "name": "leaf"
         },
         {
           "type": "SYMBOL",
@@ -92,7 +92,7 @@
         }
       ]
     },
-    "composite_node": {
+    "composite": {
       "type": "SEQ",
       "members": [
         {
@@ -162,7 +162,7 @@
         }
       ]
     },
-    "lotto_node": {
+    "lotto": {
       "type": "CHOICE",
       "members": [
         {
@@ -269,7 +269,7 @@
         }
       ]
     },
-    "decorator_node": {
+    "decorator": {
       "type": "SEQ",
       "members": [
         {
@@ -342,13 +342,13 @@
             },
             {
               "type": "SYMBOL",
-              "name": "_node"
+              "name": "_element"
             }
           ]
         }
       ]
     },
-    "leaf_node": {
+    "leaf": {
       "type": "CHOICE",
       "members": [
         {

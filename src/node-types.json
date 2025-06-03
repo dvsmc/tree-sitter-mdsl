@@ -39,19 +39,19 @@
           "named": true
         },
         {
-          "type": "composite_node",
+          "type": "composite",
           "named": true
         },
         {
-          "type": "decorator_node",
+          "type": "decorator",
           "named": true
         },
         {
-          "type": "leaf_node",
+          "type": "leaf",
           "named": true
         },
         {
-          "type": "lotto_node",
+          "type": "lotto",
           "named": true
         }
       ]
@@ -95,7 +95,7 @@
     "fields": {}
   },
   {
-    "type": "composite_node",
+    "type": "composite",
     "named": true,
     "fields": {},
     "children": {
@@ -122,7 +122,7 @@
     }
   },
   {
-    "type": "decorator_node",
+    "type": "decorator",
     "named": true,
     "fields": {},
     "children": {
@@ -142,11 +142,11 @@
           "named": true
         },
         {
-          "type": "composite_node",
+          "type": "composite",
           "named": true
         },
         {
-          "type": "decorator_node",
+          "type": "decorator",
           "named": true
         },
         {
@@ -154,11 +154,11 @@
           "named": true
         },
         {
-          "type": "leaf_node",
+          "type": "leaf",
           "named": true
         },
         {
-          "type": "lotto_node",
+          "type": "lotto",
           "named": true
         },
         {
@@ -196,7 +196,7 @@
     }
   },
   {
-    "type": "leaf_node",
+    "type": "leaf",
     "named": true,
     "fields": {},
     "children": {
@@ -227,7 +227,7 @@
     }
   },
   {
-    "type": "lotto_node",
+    "type": "lotto",
     "named": true,
     "fields": {},
     "children": {
@@ -269,7 +269,7 @@
     }
   },
   {
-    "type": "root_node",
+    "type": "root",
     "named": true,
     "fields": {},
     "children": {
@@ -301,7 +301,7 @@
           "named": true
         },
         {
-          "type": "root_node",
+          "type": "root",
           "named": true
         }
       ]
