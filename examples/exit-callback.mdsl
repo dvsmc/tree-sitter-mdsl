@@ -1,0 +1,8 @@
+root {
+    sequence entry(StartWalkingAnimation) exit(StopWalkingAnimation) {
+        action [WalkNorthOneSpace]
+        action [WalkEastOneSpace]
+        action [WalkSouthOneSpace]
+        action [WalkWestOneSpace]
+    }
+}

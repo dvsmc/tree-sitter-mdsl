@@ -1,0 +1,5 @@
+root {
+    repeat [5] {
+        action [SomeAction]
+    }
+}

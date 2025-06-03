@@ -1,0 +1,8 @@
+root {
+    selector while(IsHungry) {
+        sequence {
+            condition [HasDollars, 15]
+            action [OrderFood, "Pizza"]
+        }
+    }
+}

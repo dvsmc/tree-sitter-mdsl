@@ -1,0 +1,8 @@
+root {
+    repeat {
+        sequence {
+            action [FireWeapon]
+            wait [2000]
+        }
+    }
+}

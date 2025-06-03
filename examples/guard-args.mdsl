@@ -1,0 +1,3 @@
+root {
+    action [Run] while(HasItemEquipped, "running-shoes")
+}

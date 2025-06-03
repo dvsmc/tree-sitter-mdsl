@@ -1,0 +1,8 @@
+root {
+    sequence until(CanSeePlayer) {
+        action [LookLeft]
+        wait [5000]
+        action [LookRight]
+        wait [5000]
+    }
+}

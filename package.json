@@ -1,6 +1,6 @@
 {
     "name": "tree-sitter-mdsl",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "Tree-sitter grammar for MDSL",
     "main": "index.js",
     "tree-sitter": {

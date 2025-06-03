@@ -1,0 +1,8 @@
+root {
+    sequence step(OnMoving) {
+        action [WalkNorthOneSpace]
+        action [WalkEastOneSpace]
+        action [WalkSouthOneSpace]
+        action [WalkWestOneSpace]
+    }
+}

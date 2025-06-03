@@ -1,0 +1,7 @@
+root {
+    sequence {
+        action [PickUpProjectile]
+        wait [2000, 8000]
+        action [ThrowProjectile]
+    }
+}

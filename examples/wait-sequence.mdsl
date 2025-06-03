@@ -1,0 +1,10 @@
+root {
+    sequence {
+        condition [HasIngredient, "Egg"]
+        lotto {
+            action [CookFood, "Omelette"]
+            action [CookFood, "Scrambled Eggs"]
+            action [CookFood, "Fried Eggs"]
+        }
+    }
+}

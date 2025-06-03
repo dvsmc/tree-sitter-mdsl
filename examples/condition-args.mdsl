@@ -1,0 +1,5 @@
+root {
+    sequence {
+        condition [HasItem, "potion"]
+    }
+}

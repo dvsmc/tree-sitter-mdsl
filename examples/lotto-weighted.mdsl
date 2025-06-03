@@ -1,0 +1,8 @@
+root {
+    lotto [10,5,3,1] {
+        action [CommonAction]
+        action [UncommonAction]
+        action [RareAction]
+        action [VeryRareAction]
+    }
+}

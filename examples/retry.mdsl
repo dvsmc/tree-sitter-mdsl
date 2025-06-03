@@ -1,0 +1,5 @@
+root {
+    retry [5] {
+        action [SomeAction]
+    }
+}

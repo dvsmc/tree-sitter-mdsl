@@ -1,0 +1,3 @@
+root {
+    action [Say, "hello world", 5, true]
+}

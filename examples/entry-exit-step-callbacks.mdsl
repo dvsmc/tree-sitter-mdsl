@@ -1,0 +1,5 @@
+root entry(OnRootStart) exit(OnRootFinish) {
+    sequence entry(OnSequenceStart) exit(OnSequenceFinish) {
+        action [Succeed] entry(OnActionStart) exit(OnActionFinish) step(OnActionStep)
+    }
+}

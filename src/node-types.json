@@ -196,7 +196,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "arg_list",
@@ -416,6 +416,10 @@
   },
   {
     "type": "succeed",
+    "named": false
+  },
+  {
+    "type": "then",
     "named": false
   },
   {

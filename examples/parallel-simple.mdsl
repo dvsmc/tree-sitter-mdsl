@@ -1,0 +1,6 @@
+root {
+    parallel {
+        action [RubBelly]
+        action [PatHead]
+    }
+}

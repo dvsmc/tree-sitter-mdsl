@@ -1,0 +1,18 @@
+root {
+    parallel {
+        sequence {
+            wait [500, 4000]
+            lotto {
+                action [Succeed]
+                action [Fail]
+            }
+        }
+        sequence {
+            wait [500, 4000]
+            lotto {
+                action [Succeed]
+                action [Fail]
+            }
+        }
+    }
+}

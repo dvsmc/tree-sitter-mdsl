@@ -1,0 +1,6 @@
+root {
+    race {
+        action [UnlockDoor]
+        action [FindAlternativePath]
+    }
+}

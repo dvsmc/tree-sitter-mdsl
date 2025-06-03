@@ -1,0 +1,7 @@
+root {
+    selector {
+        action [TryThis]
+        action [ThenTryThis]
+        action [TryThisLast]
+    }
+}

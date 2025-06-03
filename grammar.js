@@ -53,7 +53,12 @@ module.exports = grammar({
             choice(
                 seq("action", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),
                 seq("condition", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),
+                // wait [number, number]
                 seq("wait", "[", $.number, ",", $.number, "]", optional($.callbacks), optional($.guards)),
+                // wait [number]
+                seq("wait", "[", $.number, "]", optional($.callbacks), optional($.guards)),
+                // wait (no args)
+                seq("wait", optional($.callbacks), optional($.guards)),
                 seq("branch", "[", $.identifier, "]", optional($.callbacks), optional($.guards)),
             ),
 
@@ -70,8 +75,14 @@ module.exports = grammar({
 
         guards: ($) =>
             choice(
-                seq("while", "(", $.identifier, optional(seq(",", sepBy(",", $._value))), ")"),
-                seq("until", "(", $.identifier, optional(seq(",", sepBy(",", $._value))), ")"),
+                seq(
+                    "while", "(", $.identifier, optional(seq(",", sepBy(",", $._value))), ")",
+                    optional(seq("then", choice("succeed", "fail")))
+                ),
+                seq(
+                    "until", "(", $.identifier, optional(seq(",", sepBy(",", $._value))), ")",
+                    optional(seq("then", choice("succeed", "fail")))
+                ),
             ),
 
         comment: ($) => token(seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/")),

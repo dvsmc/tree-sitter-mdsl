@@ -1,0 +1,7 @@
+root {
+    sequence {
+        action [Walk]
+        action [Fall]
+        action [Laugh]
+    }
+}

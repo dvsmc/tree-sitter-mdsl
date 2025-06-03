@@ -1,0 +1,6 @@
+root {
+    all {
+        action [Reload]
+        action [MoveToCover]
+    }
+}

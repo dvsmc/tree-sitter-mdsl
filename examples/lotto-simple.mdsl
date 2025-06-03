@@ -1,0 +1,6 @@
+root {
+    lotto {
+        action [MoveLeft]
+        action [MoveRight]
+    }
+}

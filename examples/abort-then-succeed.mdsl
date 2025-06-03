@@ -1,0 +1,6 @@
+root {
+    sequence {
+        wait until(CanAttack) then succeed
+        action [Attack]
+    }
+}

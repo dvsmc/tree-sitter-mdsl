@@ -1,0 +1,6 @@
+root {
+    selector while(IsHungry) {
+        ...existing code...
+        action [Starve]
+    }
+}

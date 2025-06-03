@@ -1,0 +1,8 @@
+root {
+    sequence while(IsWandering) {
+        action [Whistle]
+        wait [5000]
+        action [Yawn]
+        wait [5000]
+    }
+}

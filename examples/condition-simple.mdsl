@@ -1,0 +1,6 @@
+root {
+    sequence {
+        condition [HasWeapon]
+        action [Attack]
+    }
+}
