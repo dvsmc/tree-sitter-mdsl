@@ -10,7 +10,7 @@
 #define STATE_COUNT 210
 #define LARGE_STATE_COUNT 12
 #define SYMBOL_COUNT 59
-#define ALIAS_COUNT 0
+#define ALIAS_COUNT 2
 #define TOKEN_COUNT 38
 #define EXTERNAL_TOKEN_COUNT 0
 #define FIELD_COUNT 0
@@ -78,6 +78,8 @@ enum ts_symbol_identifiers {
   aux_sym_lotto_repeat1 = 56,
   aux_sym_arg_list_repeat1 = 57,
   aux_sym_callbacks_repeat1 = 58,
+  alias_sym_fail = 59,
+  alias_sym_succeed = 60,
 };
 
 static const char * const ts_symbol_names[] = {
@@ -140,6 +142,8 @@ static const char * const ts_symbol_names[] = {
   [aux_sym_lotto_repeat1] = "lotto_repeat1",
   [aux_sym_arg_list_repeat1] = "arg_list_repeat1",
   [aux_sym_callbacks_repeat1] = "callbacks_repeat1",
+  [alias_sym_fail] = "fail",
+  [alias_sym_succeed] = "succeed",
 };
 
 static const TSSymbol ts_symbol_map[] = {
@@ -202,6 +206,8 @@ static const TSSymbol ts_symbol_map[] = {
   [aux_sym_lotto_repeat1] = aux_sym_lotto_repeat1,
   [aux_sym_arg_list_repeat1] = aux_sym_arg_list_repeat1,
   [aux_sym_callbacks_repeat1] = aux_sym_callbacks_repeat1,
+  [alias_sym_fail] = alias_sym_fail,
+  [alias_sym_succeed] = alias_sym_succeed,
 };
 
 static const TSSymbolMetadata ts_symbol_metadata[] = {
@@ -259,15 +265,15 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   },
   [anon_sym_repeat] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_retry] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_flip] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_succeed] = {
     .visible = true,
@@ -395,7 +401,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   },
   [sym_node_args] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [sym_arg_list] = {
     .visible = true,
@@ -441,6 +447,14 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = false,
   },
+  [alias_sym_fail] = {
+    .visible = true,
+    .named = true,
+  },
+  [alias_sym_succeed] = {
+    .visible = true,
+    .named = true,
+  },
 };
 
 static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE_LENGTH] = {
@@ -470,12 +484,12 @@ static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE
     [1] = anon_sym_flip,
   },
   [9] = {
-    [0] = anon_sym_succeed,
-    [1] = anon_sym_succeed,
+    [0] = alias_sym_succeed,
+    [1] = alias_sym_succeed,
   },
   [10] = {
-    [0] = anon_sym_fail,
-    [1] = anon_sym_fail,
+    [0] = alias_sym_fail,
+    [1] = alias_sym_fail,
   },
   [11] = {
     [1] = anon_sym_sequence,
@@ -510,14 +524,14 @@ static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE
     [2] = anon_sym_flip,
   },
   [19] = {
-    [0] = anon_sym_succeed,
-    [1] = anon_sym_succeed,
-    [2] = anon_sym_succeed,
+    [0] = alias_sym_succeed,
+    [1] = alias_sym_succeed,
+    [2] = alias_sym_succeed,
   },
   [20] = {
-    [0] = anon_sym_fail,
-    [1] = anon_sym_fail,
-    [2] = anon_sym_fail,
+    [0] = alias_sym_fail,
+    [1] = alias_sym_fail,
+    [2] = alias_sym_fail,
   },
   [21] = {
     [1] = anon_sym_sequence,
@@ -560,16 +574,16 @@ static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE
     [3] = anon_sym_flip,
   },
   [29] = {
-    [0] = anon_sym_succeed,
-    [1] = anon_sym_succeed,
-    [2] = anon_sym_succeed,
-    [3] = anon_sym_succeed,
+    [0] = alias_sym_succeed,
+    [1] = alias_sym_succeed,
+    [2] = alias_sym_succeed,
+    [3] = alias_sym_succeed,
   },
   [30] = {
-    [0] = anon_sym_fail,
-    [1] = anon_sym_fail,
-    [2] = anon_sym_fail,
-    [3] = anon_sym_fail,
+    [0] = alias_sym_fail,
+    [1] = alias_sym_fail,
+    [2] = alias_sym_fail,
+    [3] = alias_sym_fail,
   },
   [31] = {
     [1] = anon_sym_sequence,
@@ -620,26 +634,27 @@ static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE
     [4] = anon_sym_flip,
   },
   [39] = {
-    [0] = anon_sym_succeed,
-    [1] = anon_sym_succeed,
-    [2] = anon_sym_succeed,
-    [3] = anon_sym_succeed,
-    [4] = anon_sym_succeed,
+    [0] = alias_sym_succeed,
+    [1] = alias_sym_succeed,
+    [2] = alias_sym_succeed,
+    [3] = alias_sym_succeed,
+    [4] = alias_sym_succeed,
   },
   [40] = {
-    [0] = anon_sym_fail,
-    [1] = anon_sym_fail,
-    [2] = anon_sym_fail,
-    [3] = anon_sym_fail,
-    [4] = anon_sym_fail,
+    [0] = alias_sym_fail,
+    [1] = alias_sym_fail,
+    [2] = alias_sym_fail,
+    [3] = alias_sym_fail,
+    [4] = alias_sym_fail,
   },
 };
 
 static const uint16_t ts_non_terminal_alias_map[] = {
   sym_block, 11,
     sym_block,
+    alias_sym_fail,
+    alias_sym_succeed,
     anon_sym_all,
-    anon_sym_fail,
     anon_sym_flip,
     anon_sym_parallel,
     anon_sym_race,
@@ -647,29 +662,29 @@ static const uint16_t ts_non_terminal_alias_map[] = {
     anon_sym_retry,
     anon_sym_selector,
     anon_sym_sequence,
-    anon_sym_succeed,
   sym__element, 6,
     sym__element,
-    anon_sym_fail,
+    alias_sym_fail,
+    alias_sym_succeed,
     anon_sym_flip,
     anon_sym_repeat,
     anon_sym_retry,
-    anon_sym_succeed,
   sym_node_args, 10,
     anon_sym_repeat,
+    alias_sym_fail,
+    alias_sym_succeed,
     anon_sym_all,
-    anon_sym_fail,
     anon_sym_flip,
     anon_sym_parallel,
     anon_sym_race,
     anon_sym_retry,
     anon_sym_selector,
     anon_sym_sequence,
-    anon_sym_succeed,
   sym_callbacks, 11,
     sym_callbacks,
+    alias_sym_fail,
+    alias_sym_succeed,
     anon_sym_all,
-    anon_sym_fail,
     anon_sym_flip,
     anon_sym_parallel,
     anon_sym_race,
@@ -677,11 +692,11 @@ static const uint16_t ts_non_terminal_alias_map[] = {
     anon_sym_retry,
     anon_sym_selector,
     anon_sym_sequence,
-    anon_sym_succeed,
   sym_guards, 11,
     sym_guards,
+    alias_sym_fail,
+    alias_sym_succeed,
     anon_sym_all,
-    anon_sym_fail,
     anon_sym_flip,
     anon_sym_parallel,
     anon_sym_race,
@@ -689,7 +704,6 @@ static const uint16_t ts_non_terminal_alias_map[] = {
     anon_sym_retry,
     anon_sym_selector,
     anon_sym_sequence,
-    anon_sym_succeed,
   0,
 };
 
@@ -6285,7 +6299,7 @@ TS_PUBLIC const TSLanguage *tree_sitter_mdsl(void) {
     .metadata = {
       .major_version = 0,
       .minor_version = 5,
-      .patch_version = 6,
+      .patch_version = 8,
     },
   };
   return &language;

@@ -94,7 +94,7 @@ module.exports = grammar({
                         optional($.guards),
                         choice($.block, $._element),
                     ),
-                    "repeat"
+                    $.repeat
                 ),
                 alias(
                     seq(
@@ -104,7 +104,7 @@ module.exports = grammar({
                         optional($.guards),
                         choice($.block, $._element),
                     ),
-                    "retry"
+                    $.retry
                 ),
                 alias(
                     seq(
@@ -114,7 +114,7 @@ module.exports = grammar({
                         optional($.guards),
                         choice($.block, $._element),
                     ),
-                    "flip"
+                    $.flip
                 ),
                 alias(
                     seq(
@@ -124,7 +124,7 @@ module.exports = grammar({
                         optional($.guards),
                         choice($.block, $._element),
                     ),
-                    "succeed"
+                    $.succeed
                 ),
                 alias(
                     seq(
@@ -134,7 +134,7 @@ module.exports = grammar({
                         optional($.guards),
                         choice($.block, $._element),
                     ),
-                    "fail"
+                    $.fail
                 )
             ),
 
@@ -183,6 +183,18 @@ module.exports = grammar({
         number: ($) => /\d+(\.\d+)?/,
         string: ($) => /"[^"]*"/,
         boolean: ($) => choice("true", "false"),
+
+        // Add empty rules to make these node types named
+        sequence: _ => prec(1, seq()),
+        selector: _ => prec(1, seq()),
+        parallel: _ => prec(1, seq()),
+        race: _ => prec(1, seq()),
+        all: _ => prec(1, seq()),
+        repeat: _ => prec(1, seq()),
+        retry: _ => prec(1, seq()),
+        flip: _ => prec(1, seq()),
+        succeed: _ => prec(1, seq()),
+        fail: _ => prec(1, seq()),
     },
 });
 

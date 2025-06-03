@@ -537,7 +537,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "repeat"
         },
         {
@@ -600,7 +600,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "retry"
         },
         {
@@ -663,7 +663,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "flip"
         },
         {
@@ -726,7 +726,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "succeed"
         },
         {
@@ -789,7 +789,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "fail"
         }
       ]
@@ -1478,6 +1478,86 @@
           "value": "false"
         }
       ]
+    },
+    "sequence": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": []
+      }
+    },
+    "selector": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": []
+      }
+    },
+    "parallel": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": []
+      }
+    },
+    "race": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": []
+      }
+    },
+    "all": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": []
+      }
+    },
+    "repeat": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": []
+      }
+    },
+    "retry": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": []
+      }
+    },
+    "flip": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": []
+      }
+    },
+    "succeed": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": []
+      }
+    },
+    "fail": {
+      "type": "PREC",
+      "value": 1,
+      "content": {
+        "type": "SEQ",
+        "members": []
+      }
     }
   },
   "extras": [
