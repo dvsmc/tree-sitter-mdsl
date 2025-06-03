@@ -1,5 +1,32 @@
 [
   {
+    "type": "action",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "all",
     "named": true,
     "fields": {},
@@ -114,6 +141,33 @@
     "fields": {}
   },
   {
+    "type": "branch",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "callbacks",
     "named": true,
     "fields": {},
@@ -171,6 +225,33 @@
         },
         {
           "type": "sequence",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "condition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
           "named": true
         }
       ]
@@ -342,26 +423,22 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
-          "type": "arg_list",
+          "type": "action",
           "named": true
         },
         {
-          "type": "callbacks",
+          "type": "branch",
           "named": true
         },
         {
-          "type": "guards",
+          "type": "condition",
           "named": true
         },
         {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number",
+          "type": "wait",
           "named": true
         }
       ]
@@ -791,6 +868,33 @@
     }
   },
   {
+    "type": "wait",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "(",
     "named": false
   },
@@ -808,18 +912,6 @@
   },
   {
     "type": "]",
-    "named": false
-  },
-  {
-    "type": "action",
-    "named": false
-  },
-  {
-    "type": "branch",
-    "named": false
-  },
-  {
-    "type": "condition",
     "named": false
   },
   {
@@ -880,10 +972,6 @@
   },
   {
     "type": "until",
-    "named": false
-  },
-  {
-    "type": "wait",
     "named": false
   },
   {

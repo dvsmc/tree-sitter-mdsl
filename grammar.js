@@ -140,15 +140,33 @@ module.exports = grammar({
 
         leaf: ($) =>
             choice(
-                seq("action", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),
-                seq("condition", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),
+                alias(
+                    seq("action", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),
+                    $.action
+                ),
+                alias(
+                    seq("condition", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),
+                    $.condition
+                ),
                 // wait [number, number]
-                seq("wait", "[", $.number, ",", $.number, "]", optional($.callbacks), optional($.guards)),
+                alias(
+                    seq("wait", "[", $.number, ",", $.number, "]", optional($.callbacks), optional($.guards)),
+                    $.wait
+                ),
                 // wait [number]
-                seq("wait", "[", $.number, "]", optional($.callbacks), optional($.guards)),
+                alias(
+                    seq("wait", "[", $.number, "]", optional($.callbacks), optional($.guards)),
+                    $.wait
+                ),
                 // wait (no args)
-                seq("wait", optional($.callbacks), optional($.guards)),
-                seq("branch", "[", $.identifier, "]", optional($.callbacks), optional($.guards)),
+                alias(
+                    seq("wait", optional($.callbacks), optional($.guards)),
+                    $.wait
+                ),
+                alias(
+                    seq("branch", "[", $.identifier, "]", optional($.callbacks), optional($.guards)),
+                    $.branch
+                ),
             ),
 
         // node_args requires at least one value
