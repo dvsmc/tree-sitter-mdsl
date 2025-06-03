@@ -3495,7 +3495,7 @@ TS_PUBLIC const TSLanguage *tree_sitter_mdsl(void) {
     .metadata = {
       .major_version = 0,
       .minor_version = 5,
-      .patch_version = 2,
+      .patch_version = 4,
     },
   };
   return &language;
