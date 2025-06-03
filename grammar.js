@@ -85,7 +85,10 @@ module.exports = grammar({
                 ),
             ),
 
-        comment: $ => token(/\/\*[\s\S]*?\*\//),
+        comment: $ => choice(
+            token(seq('//', /.*/)), // single-line comment
+            token(/\/\*[\s\S]*?\*\//) // block comment
+        ),
 
         identifier: ($) => /[a-zA-Z_][a-zA-Z0-9_]*/,
         number: ($) => /\d+(\.\d+)?/,

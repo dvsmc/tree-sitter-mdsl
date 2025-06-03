@@ -90,6 +90,11 @@
     }
   },
   {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "composite_node",
     "named": true,
     "fields": {},
@@ -333,10 +338,6 @@
   {
     "type": "branch",
     "named": false
-  },
-  {
-    "type": "comment",
-    "named": true
   },
   {
     "type": "condition",

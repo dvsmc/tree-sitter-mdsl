@@ -981,11 +981,32 @@
       ]
     },
     "comment": {
-      "type": "TOKEN",
-      "content": {
-        "type": "PATTERN",
-        "value": "\\/\\*[\\s\\S]*?\\*\\/"
-      }
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "TOKEN",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "//"
+              },
+              {
+                "type": "PATTERN",
+                "value": ".*"
+              }
+            ]
+          }
+        },
+        {
+          "type": "TOKEN",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\/\\*[\\s\\S]*?\\*\\/"
+          }
+        }
+      ]
     },
     "identifier": {
       "type": "PATTERN",
