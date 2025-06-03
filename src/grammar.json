@@ -371,106 +371,116 @@
       "type": "CHOICE",
       "members": [
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "lotto"
-            },
-            {
-              "type": "STRING",
-              "value": "["
-            },
-            {
-              "type": "SYMBOL",
-              "name": "number"
-            },
-            {
-              "type": "REPEAT",
-              "content": {
-                "type": "SEQ",
+          "type": "ALIAS",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "lotto"
+              },
+              {
+                "type": "STRING",
+                "value": "["
+              },
+              {
+                "type": "SYMBOL",
+                "name": "number"
+              },
+              {
+                "type": "REPEAT",
+                "content": {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": ","
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "number"
+                    }
+                  ]
+                }
+              },
+              {
+                "type": "STRING",
+                "value": "]"
+              },
+              {
+                "type": "CHOICE",
                 "members": [
                   {
-                    "type": "STRING",
-                    "value": ","
+                    "type": "SYMBOL",
+                    "name": "callbacks"
                   },
                   {
-                    "type": "SYMBOL",
-                    "name": "number"
+                    "type": "BLANK"
                   }
                 ]
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "guards"
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              },
+              {
+                "type": "SYMBOL",
+                "name": "block"
               }
-            },
-            {
-              "type": "STRING",
-              "value": "]"
-            },
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "callbacks"
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
-            },
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "guards"
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
-            },
-            {
-              "type": "SYMBOL",
-              "name": "block"
-            }
-          ]
+            ]
+          },
+          "named": true,
+          "value": "lotto"
         },
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "STRING",
-              "value": "lotto"
-            },
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "callbacks"
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
-            },
-            {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "guards"
-                },
-                {
-                  "type": "BLANK"
-                }
-              ]
-            },
-            {
-              "type": "SYMBOL",
-              "name": "block"
-            }
-          ]
+          "type": "ALIAS",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "lotto"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "callbacks"
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "guards"
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              },
+              {
+                "type": "SYMBOL",
+                "name": "block"
+              }
+            ]
+          },
+          "named": true,
+          "value": "lotto"
         }
       ]
     },
@@ -844,7 +854,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "action"
         },
         {
@@ -894,7 +904,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "condition"
         },
         {
@@ -952,7 +962,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "wait"
         },
         {
@@ -1002,7 +1012,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "wait"
         },
         {
@@ -1040,7 +1050,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "wait"
         },
         {
@@ -1090,7 +1100,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "branch"
         }
       ]
@@ -1240,7 +1250,7 @@
                 }
               ]
             },
-            "named": false,
+            "named": true,
             "value": "entry"
           },
           {
@@ -1316,7 +1326,7 @@
                 }
               ]
             },
-            "named": false,
+            "named": true,
             "value": "exit"
           },
           {
@@ -1392,7 +1402,7 @@
                 }
               ]
             },
-            "named": false,
+            "named": true,
             "value": "step"
           }
         ]
@@ -1504,7 +1514,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "while"
         },
         {
@@ -1610,7 +1620,7 @@
               }
             ]
           },
-          "named": false,
+          "named": true,
           "value": "until"
         }
       ]

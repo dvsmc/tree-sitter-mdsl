@@ -69,18 +69,24 @@ module.exports = grammar({
         // Specialized lotto for lotto with optional number arguments
         lotto: ($) =>
             choice(
-                seq(
-                    "lotto",
-                    "[", $.number, repeat(seq(",", $.number)), "]",
-                    optional($.callbacks),
-                    optional($.guards),
-                    $.block,
+                alias(
+                    seq(
+                        "lotto",
+                        "[", $.number, repeat(seq(",", $.number)), "]",
+                        optional($.callbacks),
+                        optional($.guards),
+                        $.block,
+                    ),
+                    $.lotto
                 ),
-                seq(
-                    "lotto",
-                    optional($.callbacks),
-                    optional($.guards),
-                    $.block,
+                alias(
+                    seq(
+                        "lotto",
+                        optional($.callbacks),
+                        optional($.guards),
+                        $.block,
+                    ),
+                    $.lotto
                 )
             ),
 
@@ -142,30 +148,27 @@ module.exports = grammar({
             choice(
                 alias(
                     seq("action", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),
-                    "action"
+                    $.action
                 ),
                 alias(
                     seq("condition", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),
-                    "condition"
+                    $.condition
                 ),
-                // wait [number, number]
                 alias(
                     seq("wait", "[", $.number, ",", $.number, "]", optional($.callbacks), optional($.guards)),
-                    "wait"
+                    $.wait
                 ),
-                // wait [number]
                 alias(
                     seq("wait", "[", $.number, "]", optional($.callbacks), optional($.guards)),
-                    "wait"
+                    $.wait
                 ),
-                // wait (no args)
                 alias(
                     seq("wait", optional($.callbacks), optional($.guards)),
-                    "wait"
+                    $.wait
                 ),
                 alias(
                     seq("branch", "[", $.identifier, "]", optional($.callbacks), optional($.guards)),
-                    "branch"
+                    $.branch
                 ),
             ),
 
@@ -189,7 +192,7 @@ module.exports = grammar({
                             )),
                             ")"
                         ),
-                        "entry"
+                        $.entry
                     ),
                     alias(
                         seq(
@@ -202,7 +205,7 @@ module.exports = grammar({
                             )),
                             ")"
                         ),
-                        "exit"
+                        $.exit
                     ),
                     alias(
                         seq(
@@ -215,7 +218,7 @@ module.exports = grammar({
                             )),
                             ")"
                         ),
-                        "step"
+                        $.step
                     )
                 )
             ),
@@ -233,7 +236,7 @@ module.exports = grammar({
                         ")",
                         optional(seq("then", choice("succeed", "fail")))
                     ),
-                    "while"
+                    $.while
                 ),
                 alias(
                     seq(
@@ -247,7 +250,7 @@ module.exports = grammar({
                         ")",
                         optional(seq("then", choice("succeed", "fail")))
                     ),
-                    "until"
+                    $.until
                 )
             ),
 

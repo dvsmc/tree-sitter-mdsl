@@ -1,7 +1,7 @@
 [
   {
     "type": "action",
-    "named": false,
+    "named": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -9,6 +9,14 @@
       "types": [
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "exit",
           "named": true
         },
         {
@@ -20,7 +28,19 @@
           "named": true
         },
         {
+          "type": "step",
+          "named": true
+        },
+        {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -51,11 +71,31 @@
           "named": true
         },
         {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "exit",
+          "named": true
+        },
+        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "step",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -126,13 +166,34 @@
   },
   {
     "type": "branch",
-    "named": false,
-    "fields": {}
-  },
-  {
-    "type": "callbacks",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "exit",
+          "named": true
+        },
+        {
+          "type": "step",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "comment",
@@ -172,7 +233,7 @@
   },
   {
     "type": "condition",
-    "named": false,
+    "named": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -180,6 +241,14 @@
       "types": [
         {
           "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "exit",
           "named": true
         },
         {
@@ -191,7 +260,19 @@
           "named": true
         },
         {
+          "type": "step",
+          "named": true
+        },
+        {
           "type": "string",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -230,7 +311,7 @@
   },
   {
     "type": "entry",
-    "named": false,
+    "named": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -257,7 +338,7 @@
   },
   {
     "type": "exit",
-    "named": false,
+    "named": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -307,11 +388,31 @@
           "named": true
         },
         {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "exit",
+          "named": true
+        },
+        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "step",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -342,28 +443,38 @@
           "named": true
         },
         {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "exit",
+          "named": true
+        },
+        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
           "named": true
+        },
+        {
+          "type": "step",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
         }
       ]
     }
   },
   {
-    "type": "guards",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "leaf",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "lotto",
     "named": true,
     "fields": {},
     "children": {
@@ -371,19 +482,74 @@
       "required": true,
       "types": [
         {
-          "type": "block",
+          "type": "action",
           "named": true
         },
         {
-          "type": "callbacks",
+          "type": "branch",
           "named": true
         },
         {
-          "type": "guards",
+          "type": "condition",
+          "named": true
+        },
+        {
+          "type": "wait",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lotto",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "composite",
+          "named": true
+        },
+        {
+          "type": "decorator",
+          "named": true
+        },
+        {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "exit",
+          "named": true
+        },
+        {
+          "type": "leaf",
+          "named": true
+        },
+        {
+          "type": "lotto",
           "named": true
         },
         {
           "type": "number",
+          "named": true
+        },
+        {
+          "type": "step",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -414,11 +580,31 @@
           "named": true
         },
         {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "exit",
+          "named": true
+        },
+        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "step",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -449,11 +635,31 @@
           "named": true
         },
         {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "exit",
+          "named": true
+        },
+        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "step",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -484,11 +690,31 @@
           "named": true
         },
         {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "exit",
+          "named": true
+        },
+        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "step",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -519,11 +745,31 @@
           "named": true
         },
         {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "exit",
+          "named": true
+        },
+        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "step",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -573,11 +819,31 @@
           "named": true
         },
         {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "exit",
+          "named": true
+        },
+        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "step",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -608,11 +874,31 @@
           "named": true
         },
         {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "exit",
+          "named": true
+        },
+        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "step",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -640,7 +926,7 @@
   },
   {
     "type": "step",
-    "named": false,
+    "named": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -690,11 +976,31 @@
           "named": true
         },
         {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "exit",
+          "named": true
+        },
+        {
           "type": "leaf",
           "named": true
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "step",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -702,7 +1008,7 @@
   },
   {
     "type": "until",
-    "named": false,
+    "named": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -729,12 +1035,38 @@
   },
   {
     "type": "wait",
-    "named": false,
-    "fields": {}
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "entry",
+          "named": true
+        },
+        {
+          "type": "exit",
+          "named": true
+        },
+        {
+          "type": "step",
+          "named": true
+        },
+        {
+          "type": "until",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "while",
-    "named": false,
+    "named": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -772,36 +1104,12 @@
     "named": false
   },
   {
-    "type": "action",
-    "named": false
-  },
-  {
-    "type": "branch",
-    "named": false
-  },
-  {
-    "type": "condition",
-    "named": false
-  },
-  {
-    "type": "entry",
-    "named": false
-  },
-  {
-    "type": "exit",
-    "named": false
-  },
-  {
     "type": "false",
     "named": false
   },
   {
     "type": "identifier",
     "named": true
-  },
-  {
-    "type": "lotto",
-    "named": false
   },
   {
     "type": "null",
@@ -816,27 +1124,11 @@
     "named": false
   },
   {
-    "type": "step",
-    "named": false
-  },
-  {
     "type": "string",
     "named": true
   },
   {
     "type": "true",
-    "named": false
-  },
-  {
-    "type": "until",
-    "named": false
-  },
-  {
-    "type": "wait",
-    "named": false
-  },
-  {
-    "type": "while",
     "named": false
   },
   {
