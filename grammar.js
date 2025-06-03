@@ -173,7 +173,8 @@ module.exports = grammar({
             ),
 
         // node_args requires at least one value
-        node_args: ($) => seq("[", $.arg_list, "]"),
+        node_args: ($) =>
+            alias(seq("[", $.arg_list, "]"), $.node_args),
         arg_list: ($) => seq($._value, repeat(seq(",", $._value))),
 
         _value: ($) => choice($.number, $.string, $.boolean, "null", $.identifier),

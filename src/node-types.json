@@ -55,10 +55,6 @@
       "required": false,
       "types": [
         {
-          "type": "arg_list",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -87,6 +83,10 @@
           "named": true
         },
         {
+          "type": "node_args",
+          "named": true
+        },
+        {
           "type": "step",
           "named": true
         },
@@ -96,33 +96,6 @@
         },
         {
           "type": "while",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "arg_list",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "boolean",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "string",
           "named": true
         }
       ]
@@ -372,10 +345,6 @@
       "required": false,
       "types": [
         {
-          "type": "arg_list",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -401,6 +370,10 @@
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "node_args",
           "named": true
         },
         {
@@ -427,10 +400,6 @@
       "required": false,
       "types": [
         {
-          "type": "arg_list",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -456,6 +425,10 @@
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "node_args",
           "named": true
         },
         {
@@ -556,7 +529,7 @@
     }
   },
   {
-    "type": "parallel",
+    "type": "node_args",
     "named": true,
     "fields": {},
     "children": {
@@ -564,9 +537,32 @@
       "required": false,
       "types": [
         {
-          "type": "arg_list",
+          "type": "boolean",
           "named": true
         },
+        {
+          "type": "identifier",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "parallel",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
         {
           "type": "comment",
           "named": true
@@ -593,6 +589,10 @@
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "node_args",
           "named": true
         },
         {
@@ -619,10 +619,6 @@
       "required": false,
       "types": [
         {
-          "type": "arg_list",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -648,6 +644,10 @@
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "node_args",
           "named": true
         },
         {
@@ -674,10 +674,6 @@
       "required": false,
       "types": [
         {
-          "type": "arg_list",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -703,6 +699,10 @@
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "node_args",
           "named": true
         },
         {
@@ -729,10 +729,6 @@
       "required": false,
       "types": [
         {
-          "type": "arg_list",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -758,6 +754,10 @@
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "node_args",
           "named": true
         },
         {
@@ -803,10 +803,6 @@
       "required": false,
       "types": [
         {
-          "type": "arg_list",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -832,6 +828,10 @@
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "node_args",
           "named": true
         },
         {
@@ -858,10 +858,6 @@
       "required": false,
       "types": [
         {
-          "type": "arg_list",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -887,6 +883,10 @@
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "node_args",
           "named": true
         },
         {
@@ -960,10 +960,6 @@
       "required": false,
       "types": [
         {
-          "type": "arg_list",
-          "named": true
-        },
-        {
           "type": "comment",
           "named": true
         },
@@ -989,6 +985,10 @@
         },
         {
           "type": "lotto",
+          "named": true
+        },
+        {
+          "type": "node_args",
           "named": true
         },
         {
@@ -1093,14 +1093,6 @@
   },
   {
     "type": ",",
-    "named": false
-  },
-  {
-    "type": "[",
-    "named": false
-  },
-  {
-    "type": "]",
     "named": false
   },
   {
