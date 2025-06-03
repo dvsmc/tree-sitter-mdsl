@@ -13,12 +13,57 @@ module.exports = grammar({
         _element: ($) => choice($.composite, $.lotto, $.decorator, $.leaf, $.comment),
 
         composite: ($) =>
-            seq(
-                choice("sequence", "selector", "parallel", "race", "all"),
-                optional($.node_args),
-                optional($.callbacks),
-                optional($.guards),
-                $.block,
+            choice(
+                alias(
+                    seq(
+                        "sequence",
+                        optional($.node_args),
+                        optional($.callbacks),
+                        optional($.guards),
+                        $.block,
+                    ),
+                    "sequence"
+                ),
+                alias(
+                    seq(
+                        "selector",
+                        optional($.node_args),
+                        optional($.callbacks),
+                        optional($.guards),
+                        $.block,
+                    ),
+                    "selector"
+                ),
+                alias(
+                    seq(
+                        "parallel",
+                        optional($.node_args),
+                        optional($.callbacks),
+                        optional($.guards),
+                        $.block,
+                    ),
+                    "parallel"
+                ),
+                alias(
+                    seq(
+                        "race",
+                        optional($.node_args),
+                        optional($.callbacks),
+                        optional($.guards),
+                        $.block,
+                    ),
+                    "race"
+                ),
+                alias(
+                    seq(
+                        "all",
+                        optional($.node_args),
+                        optional($.callbacks),
+                        optional($.guards),
+                        $.block,
+                    ),
+                    "all"
+                )
             ),
 
         // Specialized lotto for lotto with optional number arguments
