@@ -16,13 +16,14 @@ root {
   (root
     (block
       (composite
-        (block
-          (leaf
-            (node_args
-              (identifier)))
-          (leaf
-            (node_args
-              (identifier)))
-          (leaf
-            (node_args
-              (identifier))))))))
+        (sequence
+          (block
+            (leaf (action (arg_list (identifier))))
+            (leaf (condition (arg_list (identifier))))
+            (leaf (action (arg_list (identifier))))
+          )
+        )
+      )
+    )
+  )
+)

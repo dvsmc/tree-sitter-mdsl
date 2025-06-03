@@ -146,35 +146,17 @@ module.exports = grammar({
 
         leaf: ($) =>
             choice(
-                alias(
-                    seq("action", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),
-                    $.action
-                ),
-                alias(
-                    seq("condition", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)),
-                    $.condition
-                ),
-                alias(
-                    seq("wait", "[", $.number, ",", $.number, "]", optional($.callbacks), optional($.guards)),
-                    $.wait
-                ),
-                alias(
-                    seq("wait", "[", $.number, "]", optional($.callbacks), optional($.guards)),
-                    $.wait
-                ),
-                alias(
-                    seq("wait", optional($.callbacks), optional($.guards)),
-                    $.wait
-                ),
-                alias(
-                    seq("branch", "[", $.identifier, "]", optional($.callbacks), optional($.guards)),
-                    $.branch
-                ),
+                alias(seq("action", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)), $.action),
+                alias(seq("condition", "[", $.arg_list, "]", optional($.callbacks), optional($.guards)), $.condition),
+                alias(seq("wait", "[", $.number, ",", $.number, "]", optional($.callbacks), optional($.guards)), $.wait),
+                alias(seq("wait", "[", $.number, "]", optional($.callbacks), optional($.guards)), $.wait),
+                alias(seq("wait", optional($.callbacks), optional($.guards)), $.wait),
+                alias(seq("branch", "[", $.identifier, "]", optional($.callbacks), optional($.guards)), $.branch)
             ),
 
         // node_args requires at least one value
-        node_args: ($) => alias(seq("[", $.arg_list, "]"), $.node_args),
-        arg_list: ($) => alias(seq($._value, repeat(seq(",", $._value))), $.arg_list),
+        node_args: ($) => seq("[", $.arg_list, "]"),
+        arg_list: ($) => seq($._value, repeat(seq(",", $._value))),
 
         _value: ($) => choice($.number, $.string, $.boolean, "null", $.identifier),
 
