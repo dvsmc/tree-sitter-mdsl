@@ -85,12 +85,57 @@ module.exports = grammar({
             ),
 
         decorator: ($) =>
-            seq(
-                choice("repeat", "retry", "flip", "succeed", "fail"),
-                optional($.node_args),
-                optional($.callbacks),
-                optional($.guards),
-                choice($.block, $._element),
+            choice(
+                alias(
+                    seq(
+                        "repeat",
+                        optional($.node_args),
+                        optional($.callbacks),
+                        optional($.guards),
+                        choice($.block, $._element),
+                    ),
+                    "repeat"
+                ),
+                alias(
+                    seq(
+                        "retry",
+                        optional($.node_args),
+                        optional($.callbacks),
+                        optional($.guards),
+                        choice($.block, $._element),
+                    ),
+                    "retry"
+                ),
+                alias(
+                    seq(
+                        "flip",
+                        optional($.node_args),
+                        optional($.callbacks),
+                        optional($.guards),
+                        choice($.block, $._element),
+                    ),
+                    "flip"
+                ),
+                alias(
+                    seq(
+                        "succeed",
+                        optional($.node_args),
+                        optional($.callbacks),
+                        optional($.guards),
+                        choice($.block, $._element),
+                    ),
+                    "succeed"
+                ),
+                alias(
+                    seq(
+                        "fail",
+                        optional($.node_args),
+                        optional($.callbacks),
+                        optional($.guards),
+                        choice($.block, $._element),
+                    ),
+                    "fail"
+                )
             ),
 
         leaf: ($) =>
@@ -138,13 +183,6 @@ module.exports = grammar({
         number: ($) => /\d+(\.\d+)?/,
         string: ($) => /"[^"]*"/,
         boolean: ($) => choice("true", "false"),
-
-        // Add empty rules to make these node types named
-        sequence: _ => prec(1, seq()),
-        selector: _ => prec(1, seq()),
-        parallel: _ => prec(1, seq()),
-        race: _ => prec(1, seq()),
-        all: _ => prec(1, seq()),
     },
 });
 
